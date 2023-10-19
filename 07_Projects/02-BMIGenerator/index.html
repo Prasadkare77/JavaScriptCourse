@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+
+    <!-- Bootstrap Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="">BMI Calculator</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Youtube</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="canvas">
+        <h1 class="text-center mt-5">Body Mass Calculator</h1>
+        <div class="text-center m-5">
+            <form class="col g-1">
+                <div class="mb-3 row-auto">
+                  <label for="height" class="form-label">Height in CM</label>
+                  <input type="text" class="form-control" id="height" aria-describedby="height">
+                </div>
+                <div class="mb-3">
+                  <label for="weight" class="form-label">Weight in KG</label>
+                  <input type="text" class="form-control" id="weight">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="m-3 fw-bold" id="results"></div>
+              </form>
+        </div>
+        <div class="weight-guide text-center">
+            <h3>BMI Weight Guide</h3>
+            <p>Under Weight = Less than 18.6</p>
+            <p>Normal Range = 18.6 and 24.9</p>
+            <p>Overweight = Greater than 24.9</p>
+        </div>
+      </div>
+      <script src="javascript.js"></script>
+</body>
+</html>

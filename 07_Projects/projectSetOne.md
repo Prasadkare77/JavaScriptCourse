@@ -4,7 +4,7 @@
 
 # Solution Code
 
-## Project 1
+## Project 1 BG Color Changer
 ```
 JavaScript
 console.log('Prasad')
@@ -35,7 +35,7 @@ btns.forEach((btn)=>{
 })
 ```
 
-## Project 2
+## Project 2 BMI Calculator
 ```
 JavaScript
 console.log('Prasad')
@@ -59,4 +59,15 @@ form.addEventListener('submit', (e)=>{
     }
     
 })
+
+```
+## Project 3 Digital Clock
+```
+const clock = document.querySelector('#clock')
+
+setInterval(() => {
+    let date = new Date();
+    // console.log(date.toLocaleTimeString());
+    clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
 ```

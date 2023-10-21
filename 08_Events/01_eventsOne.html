@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;"> 
+    <h2>Amazing Image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" src="https://images.pexels.com/photos/5205083/pexels-photo-5205083.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li>
+            <li><img width="200px" src="https://images.pexels.com/photos/18646435/pexels-photo-18646435/free-photo-of-a-tent-is-set-up-under-the-milky.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li>
+            <li><img width="200px" src="https://images.pexels.com/photos/18646439/pexels-photo-18646439/free-photo-of-pensi-la-also-known-as-penzi-la-mountain-pass-4-400-m-between-suru-valley-and-zanskar-valley-ladakh-region-india.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li>
+            <li><img width="200px" src="https://images.pexels.com/photos/18646438/pexels-photo-18646438/free-photo-of-the-kargyak-river-with-the-granite-mountain-peak-of-mount-gumbok-rangjon-on-the-darcha-padum-trekking-route-in-the-zanskar-valley-in-ladakh.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" id="owl"></li>
+            <li><img width="200px" src="https://images.pexels.com/photos/18646440/pexels-photo-18646440/free-photo-of-anskar.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://www.google.com/" id="google">Google</a></li>
+            
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('owl').onclick = () => {
+    //     alert('Owl Clicked')
+    // }
+
+    document.getElementById('owl').addEventListener('click', (e) => {
+        alert('Owl Clicked')
+    },false)
+
+    document.getElementById('owl').addEventListener('click', (e) => {
+        console.log(e)
+    },false)
+
+    // attachEvent()
+    //jQuery - on
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, scrennX, screenY
+    // altKey, ctrlKey, shiftKey, keyCode
+
+    document.getElementById('images').addEventListener('click', (e) => {
+        console.log('Click Inside the ul')
+    },true)
+
+    document.getElementById('owl').addEventListener('click', (e) => {
+        console.log('owl Clicked')
+        e.stopPropagation()
+    },true)
+
+    document.getElementById('google').addEventListener('click', (e)=>{
+        console.log("Google Clicked")
+        e.preventDefault()
+    })
+
+
+    document.querySelector('#images').addEventListener('click', (e) => {
+        console.log(e.target.parentNode)
+        console.log(e.target.tagName)
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id)
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        } else {
+            
+        }
+
+        // let removeIt = e.target.parentNode
+        // removeIt.remove()
+
+        // removeIt.parentNode.removeChild(removeIt)
+    })
+
+</script>
+</html>

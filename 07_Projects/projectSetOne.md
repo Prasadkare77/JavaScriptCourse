@@ -167,3 +167,68 @@ function newGame(message){
 
 
 ```
+
+## Project 5 KeyBoard Magic
+```
+const insert = document.getElementById('insert')
+
+window.addEventListener('keydown', (e)=>{
+    insert.innerHTML = `
+    <div class="color">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Key</th>
+                <th scope="col">KeyCode</th>
+                <th scope="col">Code</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">${e.key === ' ' ? 'Space' : e.key}</th>
+                    <td>${e.keyCode}</td>
+                    <td>${e.code}</td>
+                    
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>`
+})
+```
+
+## Project 6 Unlimited Colors
+```
+// Generate Random color
+
+const randomColor = () => {
+    const hex = "0123456789ABCDEF"
+    let color = '#'
+    for (let i = 0; i < 6; i++) {
+        color = color + hex[Math.floor(Math.random() * 16)]
+    }
+    return color
+}
+console.log(randomColor())
+
+const changeBgColor = () => {
+    document.body.style.backgroundColor = randomColor()
+} 
+
+let intervalId;
+const startChangingColor = () => {
+    if (!intervalId) {
+        intervalId = setInterval(changeBgColor,500)
+    }
+}
+
+const stopChangingColor = () => {
+    clearInterval(intervalId)
+    intervalId = null
+}
+
+document.querySelector('#start').addEventListener('click', startChangingColor);
+document.querySelector('#stop').addEventListener('click', stopChangingColor);
+
+```
+

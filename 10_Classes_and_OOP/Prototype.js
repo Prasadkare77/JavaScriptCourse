@@ -47,6 +47,8 @@ Teacher.__proto__ = User
 
 // Modern Syntax
 Object.setPrototypeOf(TeachingSupport, Teacher)
+console.log(TeachingSupport)
+// console.log(Teacher)
 
 let anothetUSername = "PrasadAurAkshita    "
 String.prototype.trueLength = function (){
